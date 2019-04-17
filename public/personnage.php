@@ -21,7 +21,7 @@ choixPlayer();
 
 function bouton(){
     if (!empty($_SESSION["player2"]["champion"])){
-        echo '<a href="index.php" class="btn btn-primary" >Prêt pour le combat ??</a>';
+        echo '<a href="map.php" class="btn btn-primary" >Prêt pour le combat ??</a>';
     }else{?>
         <button type="submit" class="btn btn-primary" name="submit" value="<?php echo recupIdChampion();?>"><?php checkplayer();?></button><?php
     }

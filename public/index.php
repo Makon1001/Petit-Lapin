@@ -1,6 +1,6 @@
 <?php
-include '../src/views/inc_head.php';
-include '../src/views/connexionApi.php';
+include './inc_head.php';
+include './connexionApi.php';
 ?>
 
 <section>
@@ -36,4 +36,4 @@ include '../src/views/connexionApi.php';
 </section>
 
 <?php
-include '../src/views/inc_script.php';
+include './inc_script.php';

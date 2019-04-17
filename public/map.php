@@ -17,7 +17,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
     <div class="container-fluid py-5">
         <div class="row">
            <div class="col-sm-3 text-center">
-               <h3>Player 1</h3>
+               <h3><?php echo $_SESSION['player1']['name']?></h3>
                <img src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
                <div class="playerInfo">
                   <ul class="list-group">
@@ -65,7 +65,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                 <?php } ?>
             </div>
             <div class="col-sm-3 text-center">
-                <h3>Player 2</h3>
+                <h3><?php echo $_SESSION['player2']['name']?></h3>
                 <img src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
                 <div class="playerInfo">
                     <ul class="list-group">
