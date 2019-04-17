@@ -14,50 +14,32 @@ include "./inc_head.php";
                     <div>
                         <img src="1.jpeg" alt="1">
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Attaque</a>
-                        </button>
+                        <a href="#" class="btn btn-info" role="button">Attaque</a>
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Se soigner</a>
-                        </button>
-                    </div>
-                    <br>
+                        <a href="#" class="btn btn-info" role="button">Se soigner</a>
+                    </div>                    
                     <div>
-                        <button>
-                            <a href="#" target="#">Defense</a>
-                        </button>
-                    </div>
+                        <a href="#" class="btn btn-info" role="button">Defense</a>
+                    </div>                    
                 </div>
-                <div class="card  text-center col-md-6">
+                <div class="card text-center col-md-6">
                     <div>
                         <h1>Joueur 2</h1>
                     </div>
                     <div>
-                        <img src="27.jpeg" alt="27">
+                        <img src="1.jpeg" alt="1">
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Attaque</a>
-                        </button>
+                        <a href="#" class="btn btn-info" role="button">Attaque</a>
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Se soigner</a>
-                        </button>
-                    </div>
-                    <br>
+                        <a href="#" class="btn btn-info" role="button">Se soigner</a>
+                    </div>                    
                     <div>
-                        <button>
-                            <a href="#" target="#">Defense</a>
-                        </button>
-                    </div>
+                        <a href="#" class="btn btn-info" role="button">Defense</a>
+                    </div>                    
                 </div>
             </div>
                        
