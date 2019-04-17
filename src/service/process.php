@@ -17,7 +17,43 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // action
+    if(isset($_GET['d'])) {
+        for ($i=1 ; $i <=2; $i++) {
+            if (isset($_SESSION['player'.$i]['posX']) && isset($_SESSION['player'.$i]['posY'])) {
+                if ($_GET['p'] == $i) {
+                    switch ($_GET['d']) {
+                        case 'up' :
+                            $_SESSION['player'.$i]['posY'] += 1;
+                            if ($_SESSION['player'.$i]['posY'] >= 6) {
+                                $_SESSION['player'.$i]['posY'] = 6;
+                            }
+                            break;
+                        case 'right' :
+                            $_SESSION['player'.$i]['posX'] += 1;
+                            if ($_SESSION['player'.$i]['posX'] >= 6) {
+                                $_SESSION['player'.$i]['posX'] = 6;
+                            }
+                            break;
+                        case 'down' :
+                            $_SESSION['player'.$i]['posY'] -= 1;
+                            if ($_SESSION['player'.$i]['posY'] <= 0) {
+                                $_SESSION['player'.$i]['posY'] = 0;
+                            }
+                            break;
+                        case 'left' :
+                            $_SESSION['player'.$i]['posX'] -= 1;
+                            if ($_SESSION['player'.$i]['posX'] <= 0) {
+                                $_SESSION['player'.$i]['posX'] = 0;
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        header('location: /public/map.php');
+    }
+
+
 }
 
 
