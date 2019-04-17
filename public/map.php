@@ -16,7 +16,7 @@ if (!isset($_SESSION['count'])) {
 
 ?>
 
-<section>
+<section class="bg-light">
     <div class="container-fluid py-5">
         <div class="row">
            <div class="col-sm-3 text-center">
