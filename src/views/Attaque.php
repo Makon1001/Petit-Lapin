@@ -1,16 +1,11 @@
-<?
-
-include "inc_head.php";
-
+<?php
+include "./inc_head.php";
+?>
                     <!-- Joueurs -->
 
 <body>
     <section>
-    <br>
-    <br>
-    <br>
-    <br>
-        <div class="container-fluid">
+        <div class="container-fluid py-5">
             <div class="row d-flex justify-content-center">  
                 <div class="card text-center col-md-6">
                     <div>
@@ -69,7 +64,6 @@ include "inc_head.php";
         </div>
     </section>
 
-include "inc_script.php";
-
-</body>
-<html>
+    <?php
+include "./inc_script.php";
+?>
