@@ -23,21 +23,21 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
                 if ($_GET['p'] == $i) {
                     switch ($_GET['d']) {
                         case 'up' :
-                            $_SESSION['player'.$i]['posY'] += 1;
-                            if ($_SESSION['player'.$i]['posY'] >= 6) {
-                                $_SESSION['player'.$i]['posY'] = 6;
+                            $_SESSION['player'.$i]['posY'] -= 1;
+                            if ($_SESSION['player'.$i]['posY'] <= 0) {
+                                $_SESSION['player'.$i]['posY'] = 0;
                             }
                             break;
                         case 'right' :
                             $_SESSION['player'.$i]['posX'] += 1;
-                            if ($_SESSION['player'.$i]['posX'] >= 6) {
-                                $_SESSION['player'.$i]['posX'] = 6;
+                            if ($_SESSION['player'.$i]['posX'] > 6) {
+                                $_SESSION['player'.$i]['posX'] = 5;
                             }
                             break;
                         case 'down' :
-                            $_SESSION['player'.$i]['posY'] -= 1;
-                            if ($_SESSION['player'.$i]['posY'] <= 0) {
-                                $_SESSION['player'.$i]['posY'] = 0;
+                            $_SESSION['player'.$i]['posY'] += 1;
+                            if ($_SESSION['player'.$i]['posY'] > 6) {
+                                $_SESSION['player'.$i]['posY'] = 5;
                             }
                             break;
                         case 'left' :
