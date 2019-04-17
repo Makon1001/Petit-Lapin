@@ -9,55 +9,37 @@ include "./inc_head.php";
             <div class="row d-flex justify-content-center">  
                 <div class="card text-center col-md-6">
                     <div>
-                        <h1>Joueur 1</h1>
+                        <h1 class="py-2 pb-2">Joueur 1</h1>
                     </div>
                     <div>
-                        <img src="1.jpeg" alt="1">
+                        <img class="py-2 mb-2" src="1.jpeg" alt="1">
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Attaque</a>
-                        </button>
+                        <a href="#" class="btn btn-info mb-2" role="button">Attaque</a>
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Se soigner</a>
-                        </button>
-                    </div>
-                    <br>
+                        <a href="#" class="btn btn-info py-2 pb-2 mb-2" role="button">Se soigner</a>
+                    </div>                    
                     <div>
-                        <button>
-                            <a href="#" target="#">Defense</a>
-                        </button>
-                    </div>
+                        <a href="#" class="btn btn-info" role="button">Defense</a>
+                    </div>                    
                 </div>
-                <div class="card  text-center col-md-6">
+                <div class="card text-center col-md-6">
                     <div>
-                        <h1>Joueur 2</h1>
+                        <h1 class="py-2 pb-2">Joueur 2</h1>
                     </div>
                     <div>
-                        <img src="27.jpeg" alt="27">
+                        <img class="py-2 mb-2" src="27.jpeg" alt="27">
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Attaque</a>
-                        </button>
+                        <a href="#" class="btn btn-info mb-2" role="button">Attaque</a>
                     </div>
-                    <br>
                     <div>
-                        <button>
-                            <a href="#" target="#">Se soigner</a>
-                        </button>
-                    </div>
-                    <br>
+                        <a href="#" class="btn btn-info py-2 pb-2 mb-2" role="button">Se soigner</a>
+                    </div>                    
                     <div>
-                        <button>
-                            <a href="#" target="#">Defense</a>
-                        </button>
-                    </div>
+                        <a href="#" class="btn btn-info" role="button">Defense</a>
+                    </div>                    
                 </div>
             </div>
                        
