@@ -8,7 +8,8 @@ use GuzzleHttp\Client;
 
 class ApiController
 {
-    public function selectAllPerso() {
+    public function selectAllPerso()
+    {
         $client = new GuzzleHttp\Client([
             'base_uri' => 'http://easteregg.wildcodeschool.fr/api/'
         ]);
@@ -20,10 +21,11 @@ class ApiController
         return json_decode($body->getContents());
     }
 
-    public function selectFourRandomEggs (){
+    public function selectFourRandomEggs()
+    {
         $arrEggs = array();
 
-        for($i=0;$i<4;$i++) {
+        for ($i = 0; $i < 4; $i++) {
             $client = new GuzzleHttp\Client([
                 'base_uri' => 'http://easteregg.wildcodeschool.fr/api/'
             ]);
@@ -38,3 +40,4 @@ class ApiController
 
     }
 }
+
