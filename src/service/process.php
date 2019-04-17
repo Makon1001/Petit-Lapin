@@ -30,13 +30,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
                             break;
                         case 'right' :
                             $_SESSION['player'.$i]['posX'] += 1;
-                            if ($_SESSION['player'.$i]['posX'] > 6) {
+                            if ($_SESSION['player'.$i]['posX'] > 5) {
                                 $_SESSION['player'.$i]['posX'] = 5;
                             }
                             break;
                         case 'down' :
                             $_SESSION['player'.$i]['posY'] += 1;
-                            if ($_SESSION['player'.$i]['posY'] > 6) {
+                            if ($_SESSION['player'.$i]['posY'] > 5) {
                                 $_SESSION['player'.$i]['posY'] = 5;
                             }
                             break;
@@ -50,8 +50,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
                 }
             }
         }
+        $_SESSION['count']++;
         header('location: /public/map.php');
     }
+
+
 
 
 }

@@ -10,7 +10,9 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
     $_SESSION['player2']['posY'] = rand(0, 5);
 }
 
-
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 1;
+}
 
 ?>
 
@@ -19,6 +21,9 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
         <div class="row">
            <div class="col-sm-3 text-center">
                <h3><?php echo $_SESSION['player1']['name']?></h3>
+               <?php if ($_SESSION['count'] % 2 != 0) {?>
+                    <div class="alert alert-warning">A toi de jouer !</div>
+                    <?php } ?>
                <img src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
                <div class="playerInfo">
                   <ul class="list-group">
@@ -27,6 +32,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                       <li class="list-group-item">Test</li>
                   </ul>
                </div>
+               <?php if ($_SESSION['count'] % 2 != 0) {?>
                <div class="playerControl container my-5">
                    <div class="row">
                        <div class="col-sm-4 offset-sm-4">
@@ -45,6 +51,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                        </div>
                    </div>
                </div>
+               <?php } ?>
            </div>
             <div class="col-sm-6 gameMap">
                 <?php
@@ -52,13 +59,18 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                     <div class="row" id="row-<?= $i?>">
                         <?php
                         for ($j = 0 ; $j < 6; $j++) {?>
-                        <div class="col-sm-2 border border-white bg-dark" id="col-<?= $j?>">
+                        <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
                              if ($_SESSION['player1']['posX'] == $j && $_SESSION['player1']['posY'] == $i) { ?>
-                                 <img class="gameImage" src="<?php echo $_SESSION['player1']['imgSrc'] ?>" alt="player1">
+                            <div class="rounded-circle bg-warning py-5  h-100 w-100">
+                                 <?php echo $_SESSION['player1']['name'] ?>
+                            </div>
                              <?php } else if  ($_SESSION['player2']['posX'] == $j && $_SESSION['player2']['posY'] == $i){ ?>
-                                 <img class="gameImage" src="<?php echo $_SESSION['player2']['imgSrc'] ?>" alt="player2">
+                                <div class="rounded-circle bg-danger py-5 h-100 w-100">
+                                 <?php echo $_SESSION['player2']['name'] ?>
+                                </div>
                              <?php } ?>
+
                         </div>
                         <?php } ?>
                     </div>
@@ -66,6 +78,9 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
             </div>
             <div class="col-sm-3 text-center">
                 <h3><?php echo $_SESSION['player2']['name']?></h3>
+                <?php if ($_SESSION['count'] % 2 == 0) {?>
+                    <div class="alert alert-danger">A toi de jouer !</div>
+                <?php } ?>
                 <img src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
                 <div class="playerInfo">
                     <ul class="list-group">
@@ -74,6 +89,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                         <li class="list-group-item">Test</li>
                     </ul>
                 </div>
+                <?php if($_SESSION['count'] % 2 == 0) { ?>
                 <div class="playerControl container my-5">
                     <div class="row">
                         <div class="col-sm-4 offset-sm-4">
@@ -91,6 +107,7 @@ if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])
                             <a href="/src/service/process.php?p=2&amp;d=right" class="btn btn-dark">Right</a>
                         </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>
