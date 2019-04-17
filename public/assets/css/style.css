@@ -1,0 +1,13 @@
+body {
+    font-family: 'VT323', monospace;
+    font-weight: 400 !important;
+    font-size: 20px;
+}
+.gameMap {
+    height: 90vh;
+    min-height: 600px;
+}
+
+.gameMap .row {
+    height: 16.6%;
+}
