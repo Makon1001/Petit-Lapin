@@ -109,6 +109,9 @@ class Personnage
         if($posX <= 0) {
             $posX = 0;
         }
+        if($posX >= 6) {
+            $posX = 6;
+        }
         $this->posX = $posX;
     }
 
@@ -119,6 +122,10 @@ class Personnage
     {
         if($posY <= 0) {
             $posY = 0;
+        }
+
+        if($posY >= 6) {
+            $posY = 6;
         }
         $this->posY = $posY;
     }
@@ -190,5 +197,10 @@ class Personnage
 
     public function status() {
         return $this->getName() . ': ' . $this->getPv() . '<br/>';
+    }
+
+    public function pickUpEgg()
+    {
+        $this->setEggsCount($this->getEggsCount() + 1);
     }
 }

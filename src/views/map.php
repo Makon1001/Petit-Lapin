@@ -18,18 +18,18 @@ require './inc_head.php';
                <div class="playerControl container my-5">
                    <div class="row">
                        <div class="col-sm-4 offset-sm-4">
-                        <button class="btn btn-dark">Up</button>
+                           <a href="?p=1&amp;d=up" class="btn btn-dark">Up</a>
                        </div>
                    </div>
                    <div class="row my-3">
                        <div class="col-sm-4">
-                           <button class="btn btn-dark">Left</button>
+                           <a href="?p=1&amp;d=left" class="btn btn-dark">Left</a>
                        </div>
                        <div class="col-sm-4">
-                           <button class="btn btn-dark">Down</button>
+                           <a href="?p=1&amp;d=down" class="btn btn-dark">Down</a>
                        </div>
                        <div class="col-sm-4">
-                           <button class="btn btn-dark">Right</button>
+                           <a href="?p=1&amp;d=right" class="btn btn-dark">Right</a>
                        </div>
                    </div>
                </div>
@@ -42,9 +42,9 @@ require './inc_head.php';
                         for ($j = 0 ; $j < 6; $j++) {?>
                         <div class="col-sm-2 border border-white bg-dark" id="col-<?= $j?>">
                             <?php
-                             if (isset($_SESSION['player1']) && $_SESSION['player1']['position'] == [$j, $i]) { ?>
+                             if ($_SESSION['player1']['position'] == [$j, $i]) { ?>
                                  <img class="gameImage" src="<?php echo $_SESSION['player1']['imgSrc'] ?>" alt="player1">
-                             <?php } else if  (isset($_SESSION['player2']) && $_SESSION['player2']['position'] == [$j, $i]){ ?>
+                             <?php } else if  ($_SESSION['player2']['position'] == [$j, $i]){ ?>
                                  <img class="gameImage" src="<?php echo $_SESSION['player2']['imgSrc'] ?>" alt="player2">
                              <?php } ?>
                             <p>test</p>
@@ -71,15 +71,14 @@ require './inc_head.php';
                     </div>
                     <div class="row my-3">
                         <div class="col-sm-4">
-                            <button class="btn btn-dark">Left</button>
+                            <a href="?p=2&amp;d=left" class="btn btn-dark">Left</a>
                         </div>
                         <div class="col-sm-4">
-                            <button class="btn btn-dark">Down</button>
+                            <a href="?p=2&amp;d=down" class="btn btn-dark">Down</a>
                         </div>
                         <div class="col-sm-4">
-                            <button class="btn btn-dark">Right</button>
+                            <a href="?p=2&amp;d=right" class="btn btn-dark">Right</a>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
