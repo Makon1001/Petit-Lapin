@@ -61,6 +61,7 @@ function change(){
         </div>
     </div>
 </div>
+
     <?php
 include "./inc_script.php";
 ?>
