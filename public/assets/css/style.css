@@ -81,3 +81,13 @@ h1 {
 .black {
     color: #000 !important;
 }
+
+#selectFooter {
+    position: relative;
+}
+
+.btn-perso-select {
+    position: absolute;
+    top: -25px;
+    left: 44%;
+}
