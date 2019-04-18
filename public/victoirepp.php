@@ -24,7 +24,7 @@ include './inc_script.php';
     <hr class="m-0">
 <footer class="text-center py-5">
     <div class="container ">
-        <p>Hackathon 1</p>
+        <p>On a toujours besoin d'un lapin, je dis ça, je dis rien...</p>
     </div>
 </footer>
 <?php 
