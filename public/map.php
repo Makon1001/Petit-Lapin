@@ -17,6 +17,7 @@ if (!isset($_SESSION['count'])) {
 // récupérer les images des oeufs return en array
 $api = new \perso\ApiController();
 $arrayEggs = $api->selectFiveRandomEggs();
+$eggsImg=array();
 for($i=0;$i<5;$i++){
     $eggs[$i]=get_object_vars($arrayEggs[$i]);
     $eggsImg[$i] = $eggs[$i]['image'];
@@ -26,8 +27,13 @@ for($i=0;$i<5;$i++){
 // init position eggs et set imgEggs
 for ($i= 1; $i <=5; $i++) {
     if (isset($_SESSION['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
-        $_SESSION['egg'.$i]['position'] = [rand(0, 5), rand(0, 5)];
-        $_SESSION['eggs'.$i]['imgSrc'] = $eggsImg[$i-1];
+       $position = [rand(0, 5), rand(0, 5)];
+       if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY'])) {
+           $_SESSION['egg' . $i]['position'] = $position;
+       } else {
+           $i-=1;
+       }
+       $_SESSION['egg' . $i]['imgSrc'] = $eggsImg[$i - 1];
     }
 }
 
@@ -78,13 +84,22 @@ for ($i= 1; $i <=5; $i++) {
                         for ($j = 0 ; $j < 6; $j++) {?>
                         <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
-                             if ($_SESSION['player1']['posX'] == $j && $_SESSION['player1']['posY'] == $i) { ?>
-                            <div class="rounded-circle bg-warning py-5  h-100 w-100">
-                                 <?php echo $_SESSION['player1']['name'] ?>
-                            </div>
-                             <?php } else if  ($_SESSION['player2']['posX'] == $j && $_SESSION['player2']['posY'] == $i){ ?>
+                            for($k=1;$k<6;$k++){
+                                if ($_SESSION['egg'.$k]['position'][0] == $j && $_SESSION['egg'.$k]['position'][1] == $i) { ?>
+                                    <div class=" py-5  h-100 w-100">
+                                        <img src="<?php echo $_SESSION['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
+                                    </div>
+                            <?php
+                                }
+                            }
+                            if($_SESSION['player1']['posX'] == $j && $_SESSION['player1']['posY'] == $i) { ?>
+                                <div class="rounded-circle bg-warning py-5  h-100 w-100">
+                                     <?php echo $_SESSION['player1']['name'] ?>
+                                </div>
+                             <?php }
+                            else if  ($_SESSION['player2']['posX'] == $j && $_SESSION['player2']['posY'] == $i){ ?>
                                 <div class="rounded-circle bg-danger py-5 h-100 w-100">
-                                 <?php echo $_SESSION['player2']['name'] ?>
+                                    <?php echo $_SESSION['player2']['name'] ?>
                                 </div>
                              <?php } ?>
                         </div>
@@ -123,7 +138,6 @@ for ($i= 1; $i <=5; $i++) {
             </div>
         </div>
     </div>
-
 </section>
 
 
