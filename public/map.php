@@ -26,33 +26,31 @@ for ($i= 1; $i <=4; $i++) {
 <section class="bg-light">
     <div class="container-fluid py-5">
         <div class="row">
-           <div class="col-sm-3 text-center">
+           <div class="col-sm-3 text-center px-5">
                <h3><?php echo $_SESSION['player1']['name']?></h3>
-               <?php if ($_SESSION['count'] % 2 != 0) {?>
-                    <div class="alert alert-warning">A toi de jouer !</div>
-                    <?php } ?>
                <img class="persoImg mb-4" src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
-               <div class="playerInfo">
+               <div class="playerInfo py-4">
                   <ul class="list-group">
                       <li class="list-group-item"> Nombre d'oeuf : <?= $_SESSION['player1']['eggCount']?></li>
                   </ul>
                </div>
                <?php if ($_SESSION['count'] % 2 != 0) {?>
+                   <div class="alert alert-warning">A toi de jouer !</div>
                <div class="playerControl container my-5">
                    <div class="row">
                        <div class="col-sm-4 offset-sm-4">
-                           <a href="/src/service/process.php?p=1&amp;d=up" class="btn btn-dark">Up</a>
+                           <a href="/src/service/process.php?p=1&amp;d=up" class="btn btn-dark btn-control">Up</a>
                        </div>
                    </div>
                    <div class="row my-3">
                        <div class="col-sm-4">
-                           <a href="/src/service/process.php?p=1&amp;d=left" class="btn btn-dark">Left</a>
+                           <a href="/src/service/process.php?p=1&amp;d=left" class="btn btn-dark btn-control">Left</a>
                        </div>
                        <div class="col-sm-4">
-                           <a href="/src/service/process.php?p=1&amp;d=down" class="btn btn-dark">Down</a>
+                           <a href="/src/service/process.php?p=1&amp;d=down" class="btn btn-dark btn-control">Down</a>
                        </div>
                        <div class="col-sm-4">
-                           <a href="/src/service/process.php?p=1&amp;d=right" class="btn btn-dark">Right</a>
+                           <a href="/src/service/process.php?p=1&amp;d=right" class="btn btn-dark btn-control">Right</a>
                        </div>
                    </div>
                </div>
@@ -80,33 +78,31 @@ for ($i= 1; $i <=4; $i++) {
                     </div>
                 <?php } ?>
             </div>
-            <div class="col-sm-3 text-center">
+            <div class="col-sm-3 text-center px-5">
                 <h3><?php echo $_SESSION['player2']['name']?></h3>
-                <?php if ($_SESSION['count'] % 2 == 0) {?>
-                    <div class="alert alert-danger">A toi de jouer !</div>
-                <?php } ?>
                 <img class="persoImg mb-4" src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
-                <div class="playerInfo">
+                <div class="playerInfo py-4">
                     <ul class="list-group">
                         <li class="list-group-item">Nombre d'oeuf : <?= $_SESSION['player2']['eggCount']?></li>
                     </ul>
                 </div>
                 <?php if($_SESSION['count'] % 2 == 0) { ?>
+                <div class="alert alert-danger">A toi de jouer !</div>
                 <div class="playerControl container my-5">
                     <div class="row">
                         <div class="col-sm-4 offset-sm-4">
-                            <a href="/src/service/process.php?p=2&amp;d=up" class="btn btn-dark">Up</a>
+                            <a href="/src/service/process.php?p=2&amp;d=up" class="btn btn-dark btn-control">Up</a>
                         </div>
                     </div>
                     <div class="row my-3">
                         <div class="col-sm-4">
-                            <a href="/src/service/process.php?p=2&amp;d=left" class="btn btn-dark">Left</a>
+                            <a href="/src/service/process.php?p=2&amp;d=left" class="btn btn-dark btn-control">Left</a>
                         </div>
                         <div class="col-sm-4">
-                            <a href="/src/service/process.php?p=2&amp;d=down" class="btn btn-dark">Down</a>
+                            <a href="/src/service/process.php?p=2&amp;d=down" class="btn btn-dark btn-control">Down</a>
                         </div>
                         <div class="col-sm-4">
-                            <a href="/src/service/process.php?p=2&amp;d=right" class="btn btn-dark">Right</a>
+                            <a href="/src/service/process.php?p=2&amp;d=right" class="btn btn-dark btn-control">Right</a>
                         </div>
                 </div>
                 <?php } ?>
