@@ -14,28 +14,7 @@ if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
-// récupérer les images des oeufs return en array
-$api = new \perso\ApiController();
-$arrayEggs = $api->selectFiveRandomEggs();
-$eggsImg=array();
-for($i=0;$i<5;$i++){
-    $eggs[$i]=get_object_vars($arrayEggs[$i]);
-    $eggsImg[$i] = $eggs[$i]['image'];
 
-}
-
-// init position eggs et set imgEggs
-for ($i= 1; $i <=5; $i++) {
-    if (isset($_SESSION['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
-       $position = [rand(0, 5), rand(0, 5)];
-       if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY'])) {
-           $_SESSION['egg' . $i]['position'] = $position;
-       } else {
-           $i-=1;
-       }
-       $_SESSION['egg' . $i]['imgSrc'] = $eggsImg[$i - 1];
-    }
-}
 
 ?>
 
