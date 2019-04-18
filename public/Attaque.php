@@ -31,10 +31,10 @@ function ok(){
         <div class="card text-center col-md-6">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php  echo $_SESSION['playerFinal']['name']?></h1>
+                    <h1 class="py-2 pb-2 black"><?php  echo $_SESSION['playerFinal']['name']?></h1>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2">100 PV</h1>
+                    <h1 class="py-2 pb-2 black">100 PV</h1>
                 </div>
             </div>
             <div>
@@ -47,10 +47,10 @@ function ok(){
         <div class="card text-center col-md-6">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php  echo $_SESSION['player3']['name']?></h1>
+                    <h1 class="py-2 pb-2 black"><?php  echo $_SESSION['player3']['name']?></h1>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php echo $_SESSION['player3']['pv'];?> PV</h1>
+                    <h1 class="py-2 pb-2 black"><?php echo $_SESSION['player3']['pv'];?> PV</h1>
                 </div>
             </div>
             <div>
