@@ -38,6 +38,9 @@ for ($i= 1; $i <=5; $i++) {
 }
 
 $_SESSION['eggsCounter'] = 5;
+$_SESSION['player3']['imgSrc']="assets/images/yavuz.jpeg";
+$_SESSION['player3']['name']="Yavuz";
+$_SESSION['player3']['pv']=100;
 
 
 header('location: /public/personnage.php');
