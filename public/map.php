@@ -82,14 +82,10 @@ if ($_SESSION['player1']['eggCount'] >= 3) {
                                 }
                             }
                             if($_SESSION['player1']['posX'] == $j && $_SESSION['player1']['posY'] == $i) { ?>
-                                <div class="rounded-circle bg-warning py-5  h-100 w-100">
-                                     <?php echo $_SESSION['player1']['name'] ?>
-                                </div>
+                                <img class="player1ImgGame" src="<?php echo $_SESSION['player1']['imgSrc'] ?>" alt="playerImg">
                              <?php }
                             else if  ($_SESSION['player2']['posX'] == $j && $_SESSION['player2']['posY'] == $i){ ?>
-                                <div class="rounded-circle bg-danger py-5 h-100 w-100">
-                                    <?php echo $_SESSION['player2']['name'] ?>
-                                </div>
+                                <img class="player2ImgGame" src="<?php echo $_SESSION['player2']['imgSrc'] ?>" alt="playerImg">
                              <?php } ?>
                         </div>
                         <?php } ?>

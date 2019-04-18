@@ -42,8 +42,26 @@ h1 {
     width: auto;
 }
 .img{
-    min-height: 656px;
-    min-width: 439px;
-    max-height: 656px;
-    max-width: 439px;
+    width: 439px;
+    height: auto;
+}
+
+.playerSelect {
+    border: 4px solid darkgreen;
+}
+
+.player1ImgGame {
+    padding-top: 10px;
+    width: 80%;
+    height: auto;
+    border: 3px solid #D8900A;
+    border-radius: 50%;
+}
+
+.player2ImgGame {
+    padding-top: 10px;
+    width: 80%;
+    height: auto;
+    border: 3px solid #8B1C24;
+    border-radius: 50%;
 }
