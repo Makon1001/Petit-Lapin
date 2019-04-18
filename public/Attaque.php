@@ -12,6 +12,9 @@ function ok(){
         echo '<div class="col-md-12 text-center"><h2>Yavouz perd 50 pv!!</h2></div>';
     }
 }
+if($_GET['a']='@'){
+    header('location: /public/victoire.php');
+}
 ?>
                     <!-- Joueurs -->
 <div class="container-fluid bg-dark text-white">
