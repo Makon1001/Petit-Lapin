@@ -62,6 +62,7 @@ function ok(){
         </div>
     </div>
 </div>
+
     <?php
 include "./inc_script.php";
 ?>
