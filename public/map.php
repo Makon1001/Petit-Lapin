@@ -7,7 +7,14 @@ if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
-
+for ($i = 1; $i< count($_SESSION['eggs']); $i++ ) {
+    for ($j = 1; $j <= 2; $j++) {
+        if($_SESSION['eggs']['egg'.$i]['position'][0] == $_SESSION['player'.$j]['posX'] && $_SESSION['eggs']['egg'.$i]['position'][1] == $_SESSION['player'.$j]['posY']) {
+            unset($_SESSION['eggs']['egg'.$i]);
+            $_SESSION['player'.$j]['eggCount'] += 1;
+        }
+    }
+}
 
 ?>
 
@@ -56,10 +63,10 @@ if (!isset($_SESSION['count'])) {
                         for ($j = 0 ; $j < 6; $j++) {?>
                         <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
-                            for($k=1;$k<6;$k++){
+                            for($k=1;$k < count($_SESSION['eggs']);$k++){
                                 if ($_SESSION['egg'.$k]['position'][0] == $j && $_SESSION['egg'.$k]['position'][1] == $i) { ?>
                                     <div class=" py-5  h-100 w-100">
-                                        <img src="<?php echo $_SESSION['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
+                                        <img src="<?php echo $_SESSION['eggs']['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
                                     </div>
                             <?php
                                 }
