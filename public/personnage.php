@@ -78,10 +78,9 @@ function bouton(){
                 <div class="col-md-6">
                     <div class="row">
                         <?php
-                        foreach ($_SESSION['persos'] as $perso) {
-                            echo '<div class="col-2"><a href="?id=' . $perso["id"] . '" ><img src="' . $perso["image"] . '" alt="..." class="img-thumbnail"><p>' . $perso["name"] . '</p></a></div>';
-                        }
-                        ?>
+                        foreach ($_SESSION['persos'] as $perso) {?>
+                             <div class="col-2 <?php if ($_GET['id']==$perso['id']){echo "playerSelect";}?> "><a href="?id=<?=$perso["id"]?>"><img src="<?= $perso["image"]?>" alt="..." class="img-thumbnail"><p><?=$perso["name"]?></p></a></div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-3 text-center">

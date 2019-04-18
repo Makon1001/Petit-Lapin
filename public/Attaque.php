@@ -12,6 +12,9 @@ function ok(){
         echo '<div class="col-md-12 text-center"><h2>Yavouz perd 50 pv!!</h2></div>';
     }
 }
+if($_GET['a']='@'){
+    header('location: /public/victoire.php');
+}
 ?>
                     <!-- Joueurs -->
 <div class="container-fluid bg-dark text-white">
@@ -31,10 +34,10 @@ function ok(){
         <div class="card text-center col-md-6">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php  echo $_SESSION['playerFinal']['name']?></h1>
+                    <h1 class="py-2 pb-2 black"><?php  echo $_SESSION['playerFinal']['name']?></h1>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2">100 PV</h1>
+                    <h1 class="py-2 pb-2 black">100 PV</h1>
                 </div>
             </div>
             <div>
@@ -47,10 +50,10 @@ function ok(){
         <div class="card text-center col-md-6">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php  echo $_SESSION['player3']['name']?></h1>
+                    <h1 class="py-2 pb-2 black"><?php  echo $_SESSION['player3']['name']?></h1>
                 </div>
                 <div class="col-md-6">
-                    <h1 class="py-2 pb-2"><?php echo $_SESSION['player3']['pv'];?> PV</h1>
+                    <h1 class="py-2 pb-2 black"><?php echo $_SESSION['player3']['pv'];?> PV</h1>
                 </div>
             </div>
             <div>

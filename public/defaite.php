@@ -15,21 +15,17 @@ include './connexionApi.php';
                 <p>il ne vous reste plus que vos yeux pour pleurer...</p>
                 <img src ="https://cdn.discordapp.com/attachments/568117769548333067/568348557447528451/Photo_-_02019-13-18-10-13-46.jpg">
                 <p>vous ferait mieux la prochaine fois! OU PAS!!!</p></br>
-                <div>
-                <button class="btn btn-primary" value="submit" type="submit" id="index-btn">réessayer</button>
-                </div>
+            </div>
+            <div class="col-md-12">
+                <a href="defaite.php" class="btn btn-info mb-2" role="button">Réessayer</a>
             </div>
         </div>
     </div>
-    
 </section>
-
-    <hr class="m-0">
 <footer class="text-center py-5">
     <div class="container ">
         <p>Hackathon 1</p>
     </div>
-
 </footer>
 
 <?php
