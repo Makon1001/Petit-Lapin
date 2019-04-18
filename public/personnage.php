@@ -48,15 +48,19 @@ choixPlayer();
 
 function bouton(){
     if (!empty($_SESSION["player2"]["champion"])){
-        echo '<a href="map.php" class="btn btn-primary" >Prêt pour le combat ??</a>';
+        echo '<a href="map.php" class="btn btn-danger" >Prêt pour le combat ??</a>';
     }else{?>
         <button type="submit" class="btn btn-primary" name="submit" value="<?php echo recupIdChampion();?>"><?php checkplayer();?></button><?php
     }
 }
 ?>
+    <header class="jumbotron text-center text-white bg-dark">
+        <h2>Selectionne ton personnage</h2>
+        <p>N'est pas peur !!! l'aventure commence!!! selection une image puis appuis sur le bouton Choix player. Une fois prêt Combattez!!! </p>
+    </header>
     <form method="get">
         <div class="container_fluid py-5">
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-sm-3 text-center">
                     <h2><?php echo $_SESSION['player1']['name'];?></h2>
                     <?php if(!empty($_SESSION["player1"]["champion"])){
@@ -81,7 +85,9 @@ function bouton(){
                     } ?>
                 </div>
             </div>
-            <div class="row justify-content-center pt-5">
+        </div>
+        <div class="container-fluid bg-dark py-5">
+            <div class="row justify-content-center">
                 <?php bouton() ?>
             </div>
         </div>
@@ -116,4 +122,4 @@ function choixPlayer()
         }
     }
 }
-
+include './inc_script.php';
