@@ -23,15 +23,18 @@ for($i=0;$i<5;$i++){
     $eggsImg[$i] = $eggs[$i]['image'];
 
 }
-
+$arrayPos=[];
 // init position eggs et set imgEggs
 for ($i= 1; $i <=5; $i++) {
-    if (isset($_SESSION['eggs']['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
+    if (isset($_SESSION['eggs']['egg'.$i])) {
         $position = [rand(0, 5), rand(0, 5)];
-        if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY'])) {
-            $_SESSION['eggs']['egg' . $i]['position'] = $position;
+        $arrayPos[] = $position;
+        if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY']) && !in_array($position, $arrayPos))  {
+
+                $_SESSION['eggs']['egg' . $i]['position'] = $position;
+
         } else {
-            $i-=1;
+            $i--;
         }
         $_SESSION['eggs']['egg' . $i]['imgSrc'] = $eggsImg[$i - 1];
     }
