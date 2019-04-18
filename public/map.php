@@ -21,7 +21,6 @@ $eggsImg=array();
 for($i=0;$i<5;$i++){
     $eggs[$i]=get_object_vars($arrayEggs[$i]);
     $eggsImg[$i] = $eggs[$i]['image'];
-
 }
 
 // init position eggs et set imgEggs
