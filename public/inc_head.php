@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php require '../vendor/autoload.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
     <link href=“https://fonts.googleapis.com/css?family=VT323” rel=“stylesheet”>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link rel="stylesheet" href="/public/assets/css/style.css" type="text/css">
-    <title>Hello, world!</title>
+    <title>Eggs Fighters</title>
 </head>
 <body>
 
