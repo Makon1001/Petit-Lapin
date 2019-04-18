@@ -19,11 +19,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['player2']['name'] = $_POST['player2_name'];
         $_SESSION['player2']['eggCount'] = 0;
         // init Session egg
-        $_SESSION['egg1']=array();
-        $_SESSION['egg2']=array();
-        $_SESSION['egg3']=array();
-        $_SESSION['egg4']=array();
-        $_SESSION['egg5']=array();
+
+        $_SESSION['eggs']=array();
+        for($i=0;$i<5;$i++){
+            $_SESSION['eggs']['egg'.$i+1]= array();
+        }
         header('location: /public/init.php');
     } else {
         header('location: /public/index.php');
