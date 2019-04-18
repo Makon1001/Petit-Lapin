@@ -13,7 +13,7 @@ function ok(){
     }
 }
 
-if($_GET['a']==='@'){
+if(isset($_GET['a']) && $_GET['a']==='@'){
     header('location: /public/victoire.php');
 }
 ?>
