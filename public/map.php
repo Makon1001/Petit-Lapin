@@ -14,14 +14,28 @@ if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
-// init position eggs
-for ($i= 1; $i <=4; $i++) {
+// récupérer les images des oeufs return en array
+$api = new \perso\ApiController();
+$arrayEggs = $api->selectFiveRandomEggs();
+for($i=0;$i<5;$i++){
+    $eggs[$i]=get_object_vars($arrayEggs[$i]);
+    $eggsImg[$i] = $eggs[$i]['image'];
+
+}
+
+// init position eggs et set imgEggs
+for ($i= 1; $i <=5; $i++) {
     if (isset($_SESSION['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
         $_SESSION['egg'.$i]['position'] = [rand(0, 5), rand(0, 5)];
+        $_SESSION['eggs'.$i]['imgSrc'] = $eggsImg[$i-1];
     }
 }
 
 ?>
+
+
+
+
 
 <section class="bg-light">
     <div class="container-fluid py-5">
@@ -109,6 +123,7 @@ for ($i= 1; $i <=4; $i++) {
             </div>
         </div>
     </div>
+
 </section>
 
 
