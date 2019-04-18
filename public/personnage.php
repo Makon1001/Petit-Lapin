@@ -78,10 +78,8 @@ function bouton(){
                 <div class="col-md-6">
                     <div class="row">
                         <?php
-                        for ($i = 1; $i <= 12; $i++) {
-                            $value[$i] = selectRandomPerso();
-                            $value[$i] = get_object_vars($value[$i]);
-                            echo '<div class="col-2"><a href="?id=' . $value[$i]["id"] . '" ><img src="' . $value[$i]["image"] . '" alt="..." class="img-thumbnail"><p>' . $value[$i]["name"] . '</p></a></div>';
+                        foreach ($_SESSION['persos'] as $perso) {
+                            echo '<div class="col-2"><a href="?id=' . $perso["id"] . '" ><img src="' . $perso["image"] . '" alt="..." class="img-thumbnail"><p>' . $perso["name"] . '</p></a></div>';
                         }
                         ?>
                     </div>

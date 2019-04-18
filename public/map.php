@@ -18,10 +18,10 @@ for ($i = 1; $i<= $_SESSION['eggsCounter']; $i++ ) {
     }
 }
 
-if ($_SESSION['player1']['eggCount'] == 3) {
+if ($_SESSION['player1']['eggCount'] >= 3) {
     $_SESSION['playerFinal'] = $_SESSION['player1'];
     header('location: /public/Attaque.php');
-} else if ($_SESSION['player2']['eggCount'] == 3) {
+} else if ($_SESSION['player2']['eggCount'] >= 3) {
     $_SESSION['playerFinal'] = $_SESSION['player2'];
     header('location: /public/Attaque.php');
 }
