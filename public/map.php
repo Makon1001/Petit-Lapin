@@ -1,14 +1,7 @@
 <?php
 require './inc_head.php';
 
-if (!isset($_SESSION['player1']['posX']) && !isset($_SESSION['player1']['posY'])) {
-    $_SESSION['player1']['posX'] = rand(0, 5);
-    $_SESSION['player1']['posY'] = rand(0, 5);
-}
-if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])) {
-    $_SESSION['player2']['posX'] = rand(0, 5);
-    $_SESSION['player2']['posY'] = rand(0, 5);
-}
+
 
 if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
