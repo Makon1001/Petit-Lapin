@@ -1,20 +1,22 @@
 <?php
 require './inc_head.php';
 
-if (!isset($_SESSION['player1']['posX']) && !isset($_SESSION['player1']['posY'])) {
-    $_SESSION['player1']['posX'] = rand(0, 5);
-    $_SESSION['player1']['posY'] = rand(0, 5);
-}
-if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])) {
-    $_SESSION['player2']['posX'] = rand(0, 5);
-    $_SESSION['player2']['posY'] = rand(0, 5);
-}
+
 
 if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
 
+
+for ($i = 1; $i<= $_SESSION['eggsCounter']; $i++ ) {
+    for ($j = 1; $j <= 2; $j++) {
+        if($_SESSION['eggs']['egg'.$i]['alive'] && $_SESSION['eggs']['egg'.$i]['position'][0] == $_SESSION['player'.$j]['posX'] && $_SESSION['eggs']['egg'.$i]['position'][1] == $_SESSION['player'.$j]['posY']) {
+            $_SESSION['eggs']['egg'.$i]['alive'] = false;
+            $_SESSION['player'.$j]['eggCount'] += 1;
+        }
+    }
+}
 
 ?>
 
@@ -63,10 +65,10 @@ if (!isset($_SESSION['count'])) {
                         for ($j = 0 ; $j < 6; $j++) {?>
                         <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
-                            for($k=1;$k<6;$k++){
-                                if ($_SESSION['egg'.$k]['position'][0] == $j && $_SESSION['egg'.$k]['position'][1] == $i) { ?>
+                            for($k=1;$k <= $_SESSION['eggsCounter'];$k++){
+                                if ($_SESSION['eggs']['egg'.$k]['alive'] && $_SESSION['eggs']['egg'.$k]['position'][0] == $j && $_SESSION['eggs']['egg'.$k]['position'][1] == $i) { ?>
                                     <div class=" py-5  h-100 w-100">
-                                        <img src="<?php echo $_SESSION['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
+                                        <img src="<?php echo $_SESSION['eggs']['egg'.$k]['imgSrc'] ?>" alt="egg" class="eggsImage">
                                     </div>
                             <?php
                                 }
