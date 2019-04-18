@@ -13,7 +13,8 @@
     "autoload": {
         "psr-4": {
             "perso\\" : "src/controller",
-            "eggs\\" : "src/controller"
+            "eggs\\" : "src/controller",
+
         }
     }
 }

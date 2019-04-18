@@ -36,3 +36,14 @@ h1 {
 .btn-control {
     width: 80px;
 }
+
+.eggsImage {
+    height: 60px;
+    width: auto;
+}
+.img{
+    min-height: 656px;
+    min-width: 439px;
+    max-height: 656px;
+    max-width: 439px;
+}

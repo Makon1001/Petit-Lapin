@@ -4,7 +4,7 @@
 namespace perso;
 
 
-use GuzzleHttp\Client;
+use GuzzleHttp;
 
 class ApiController
 {
@@ -21,11 +21,11 @@ class ApiController
         return json_decode($body->getContents());
     }
 
-    public function selectFourRandomEggs()
+    public function selectFiveRandomEggs()
     {
         $arrEggs = array();
 
-        for ($i = 0; $i < 4; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $client = new GuzzleHttp\Client([
                 'base_uri' => 'http://easteregg.wildcodeschool.fr/api/'
             ]);

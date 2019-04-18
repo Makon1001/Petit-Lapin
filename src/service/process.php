@@ -1,7 +1,13 @@
 <?php
 session_start();
-// Controle des forms et datas passées dans le GET
 
+
+
+
+
+
+
+// Controle des forms et datas passées dans le GET
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // action
@@ -12,7 +18,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['player1']['eggCount'] = 0;
         $_SESSION['player2']['name'] = $_POST['player2_name'];
         $_SESSION['player2']['eggCount'] = 0;
-        header('location: /public/personnage.php');
+        // init Session egg
+
+        $_SESSION['eggs']=array();
+        for($i=0;$i<5;$i++){
+            $_SESSION['eggs']['egg'.($i+1)]= array();
+            $_SESSION['eggs']['egg'.($i+1)]['alive']=true;
+        }
+        header('location: /public/init.php');
     } else {
         header('location: /public/index.php');
     }
