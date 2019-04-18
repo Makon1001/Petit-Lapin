@@ -14,6 +14,13 @@ if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
+// init position eggs
+for ($i= 1; $i <=4; $i++) {
+    if (isset($_SESSION['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
+        $_SESSION['egg'.$i]['position'] = [rand(0, 5), rand(0, 5)];
+    }
+}
+
 ?>
 
 <section class="bg-light">
@@ -27,9 +34,7 @@ if (!isset($_SESSION['count'])) {
                <img src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
                <div class="playerInfo">
                   <ul class="list-group">
-                      <li class="list-group-item"><?= $_SESSION['player1']['posY']?></li>
-                      <li class="list-group-item">Test</li>
-                      <li class="list-group-item">Test</li>
+                      <li class="list-group-item"><?= $_SESSION['player1']['eggCount']?></li>
                   </ul>
                </div>
                <?php if ($_SESSION['count'] % 2 != 0) {?>
@@ -70,7 +75,6 @@ if (!isset($_SESSION['count'])) {
                                  <?php echo $_SESSION['player2']['name'] ?>
                                 </div>
                              <?php } ?>
-
                         </div>
                         <?php } ?>
                     </div>
@@ -84,9 +88,7 @@ if (!isset($_SESSION['count'])) {
                 <img src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
                 <div class="playerInfo">
                     <ul class="list-group">
-                        <li class="list-group-item">Test</li>
-                        <li class="list-group-item">Test</li>
-                        <li class="list-group-item">Test</li>
+                        <li class="list-group-item"><?= $_SESSION['player2']['eggCount']?></li>
                     </ul>
                 </div>
                 <?php if($_SESSION['count'] % 2 == 0) { ?>

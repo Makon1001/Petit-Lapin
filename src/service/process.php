@@ -9,7 +9,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // init des sessions
     if(isset($_POST['player1_name']) && !empty($_POST['player1_name']) && isset($_POST['player2_name']) && !empty($_POST['player2_name'])) {
         $_SESSION['player1']['name'] = $_POST['player1_name'];
+        $_SESSION['player1']['eggCount'] = 0;
         $_SESSION['player2']['name'] = $_POST['player2_name'];
+        $_SESSION['player2']['eggCount'] = 0;
         header('location: /public/personnage.php');
     } else {
         header('location: /public/index.php');
