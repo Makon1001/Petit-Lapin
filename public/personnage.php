@@ -55,9 +55,9 @@ function bouton(){
 }
 ?>
     <form method="get">
-        <div class="container_fluid">
+        <div class="container_fluid py-5">
             <div class="row">
-                <div class="col-md-3 text-center">
+                <div class="col-sm-3 text-center">
                     <h2><?php echo $_SESSION['player1']['name'];?></h2>
                     <?php if(!empty($_SESSION["player1"]["champion"])){
                         echo recupChampion1();
