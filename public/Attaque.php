@@ -45,7 +45,6 @@ include "./inc_head.php";
                        
         </div>
     </section>
-
     <?php
 include "./inc_script.php";
 ?>
