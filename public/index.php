@@ -23,7 +23,7 @@ include './connexionApi.php';
 <section class="bg-dark pb-5 text-white" id="form-div">
     <div class="container">
         <div class="row" >
-            <form method="POST" action="../src/service/process.php" class="col-sm-12 text-center">
+            <form method="POST" action="../src/service/process.php" class="col-sm-12 text-center py-4" id="index-form">
                 <button class="btn btn-primary" value="submit" type="submit" id="index-btn">Let's go</button>
                 <div class="form-row">
                     <div class="col-sm-5 form-group">
