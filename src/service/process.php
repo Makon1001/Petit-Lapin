@@ -1,7 +1,18 @@
 <?php
 session_start();
-// Controle des forms et datas passées dans le GET
 
+// init Session egg
+$_SESSION['egg1']=array();
+$_SESSION['egg2']=array();
+$_SESSION['egg3']=array();
+$_SESSION['egg4']=array();
+$_SESSION['egg5']=array();
+
+
+
+
+
+// Controle des forms et datas passées dans le GET
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // action
