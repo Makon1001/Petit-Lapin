@@ -36,3 +36,8 @@ h1 {
 .btn-control {
     width: 80px;
 }
+
+eggsImage {
+    height: 60px;
+    width: auto;
+}
