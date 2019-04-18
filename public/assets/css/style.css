@@ -1,8 +1,13 @@
 body {
     font-family: 'VT323', monospace;
     font-weight: 400 !important;
-    font-size: 20px;
+    font-size: 22px;
 }
+
+h1 {
+    font-size: 56px;
+}
+
 .gameMap {
     height: 90vh;
     min-height: 600px;
@@ -10,4 +15,24 @@ body {
 
 .gameMap .row {
     height: 16.6%;
+}
+#index-form {
+    position: relative;
+}
+
+#index-btn {
+    position: absolute;
+    top: -25px;
+    left: 40%;
+    width: 20%;
+    font-size: 22px;
+}
+
+.persoImg {
+    max-width: 200px;
+    height: auto;
+}
+
+.btn-control {
+    width: 80px;
 }
