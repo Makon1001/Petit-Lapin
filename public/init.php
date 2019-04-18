@@ -31,7 +31,7 @@ for ($i= 1; $i <=5; $i++) {
         if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY'])) {
             $_SESSION['eggs']['egg' . $i]['position'] = $position;
         } else {
-            $i-=1;
+            $i--;
         }
         $_SESSION['eggs']['egg' . $i]['imgSrc'] = $eggsImg[$i - 1];
     }
