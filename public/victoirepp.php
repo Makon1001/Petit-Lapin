@@ -12,7 +12,7 @@ include './inc_script.php';
             <div class="row py-5 text-center">
                 <div class="col-sm-12">
                     <h1>EGGS FIGHTERS</h1>
-                    </br><p>vous avez gagne!</p>
+                    </br><p>vous ave"z gagne!</p>
                     <p>vous allez pouvoir afronter le bosse final!</p></br>
                     <div>
                     <button class="btn btn-primary" value="submit" type="submit" id="index-btn">suivant</button>
