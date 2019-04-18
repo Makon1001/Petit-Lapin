@@ -1,6 +1,17 @@
 <?php
 
+require '../vendor/autoload.php';
+include 'inc_head.php';
+include 'connexionApi.php';
+
+
 use GuzzleHttp\Client;
+
+
+
+
+
+
 function selectRandomPerso() {
     $client = new GuzzleHttp\Client([
         'base_uri' => 'http://easteregg.wildcodeschool.fr/api/'
@@ -41,9 +52,6 @@ function recupChampion2(){
     }
 }
 
-require '../vendor/autoload.php';
-include 'inc_head.php';
-include 'connexionApi.php';
 choixPlayer();
 
 function bouton(){

@@ -1,39 +1,21 @@
 <?php
 require './inc_head.php';
 
-if (!isset($_SESSION['player1']['posX']) && !isset($_SESSION['player1']['posY'])) {
-    $_SESSION['player1']['posX'] = rand(0, 5);
-    $_SESSION['player1']['posY'] = rand(0, 5);
-}
-if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])) {
-    $_SESSION['player2']['posX'] = rand(0, 5);
-    $_SESSION['player2']['posY'] = rand(0, 5);
-}
+
 
 if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 1;
 }
 
-// récupérer les images des oeufs return en array
-$api = new \perso\ApiController();
-$arrayEggs = $api->selectFiveRandomEggs();
-$eggsImg=array();
-for($i=0;$i<5;$i++){
-    $eggs[$i]=get_object_vars($arrayEggs[$i]);
-    $eggsImg[$i] = $eggs[$i]['image'];
 
-}
 
-// init position eggs et set imgEggs
-for ($i= 1; $i <=5; $i++) {
-    if (isset($_SESSION['egg'.$i]) && empty($_SESSION['egg'.$i]['position'])) {
-       $position = [rand(0, 5), rand(0, 5)];
-       if(($position[0]!=$_SESSION['player1']['posX'] && $position[1]!=$_SESSION['player1']['posY']) || ($position[0]!=$_SESSION['player2']['posX'] && $position[1]!=$_SESSION['player2']['posY'])) {
-           $_SESSION['egg' . $i]['position'] = $position;
-       } else {
-           $i-=1;
-       }
-       $_SESSION['egg' . $i]['imgSrc'] = $eggsImg[$i - 1];
+for ($i = 1; $i< $_SESSION['eggsCounter']; $i++ ) {
+    for ($j = 1; $j <= 2; $j++) {
+        if($_SESSION['eggs']['egg'.$i]['alive'] && $_SESSION['eggs']['egg'.$i]['position'][0] == $_SESSION['player'.$j]['posX'] && $_SESSION['eggs']['egg'.$i]['position'][1] == $_SESSION['player'.$j]['posY']) {
+            $_SESSION['eggs']['egg'.$i]['alive'] = false;
+            $_SESSION['player'.$j]['eggCount'] += 1;
+            $_SESSION['eggsCounter'] -=1;
+        }
     }
 }
 
@@ -84,10 +66,10 @@ for ($i= 1; $i <=5; $i++) {
                         for ($j = 0 ; $j < 6; $j++) {?>
                         <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
-                            for($k=1;$k<6;$k++){
-                                if ($_SESSION['egg'.$k]['position'][0] == $j && $_SESSION['egg'.$k]['position'][1] == $i) { ?>
+                            for($k=1;$k < $_SESSION['eggsCounter'];$k++){
+                                if ($_SESSION['eggs']['egg'.$k]['alive'] && $_SESSION['eggs']['egg'.$k]['position'][0] == $j && $_SESSION['eggs']['egg'.$k]['position'][1] == $i) { ?>
                                     <div class=" py-5  h-100 w-100">
-                                        <img src="<?php echo $_SESSION['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
+                                        <img src="<?php echo $_SESSION['eggs']['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
                                     </div>
                             <?php
                                 }
