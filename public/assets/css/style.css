@@ -24,3 +24,8 @@ h1 {
     font-size: 22px;
     border-shadow: 1px 1px 1px 5px;
 }
+
+.persoImg {
+    max-width: 60px;
+    height: auto;
+}

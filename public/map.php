@@ -31,7 +31,7 @@ for ($i= 1; $i <=4; $i++) {
                <?php if ($_SESSION['count'] % 2 != 0) {?>
                     <div class="alert alert-warning">A toi de jouer !</div>
                     <?php } ?>
-               <img src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
+               <img class="persoImg" src="<?php echo $_SESSION['player1']['imgSrc']?>" alt="player1 img">
                <div class="playerInfo">
                   <ul class="list-group">
                       <li class="list-group-item"><?= $_SESSION['player1']['eggCount']?></li>
@@ -85,7 +85,7 @@ for ($i= 1; $i <=4; $i++) {
                 <?php if ($_SESSION['count'] % 2 == 0) {?>
                     <div class="alert alert-danger">A toi de jouer !</div>
                 <?php } ?>
-                <img src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
+                <img class="persoImg" src="<?php echo $_SESSION['player2']['imgSrc']?>" alt="player2 img">
                 <div class="playerInfo">
                     <ul class="list-group">
                         <li class="list-group-item"><?= $_SESSION['player2']['eggCount']?></li>
