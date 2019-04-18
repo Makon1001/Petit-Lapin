@@ -51,17 +51,33 @@ h1 {
 }
 
 .player1ImgGame {
-    padding-top: 10px;
-    width: 80%;
-    height: auto;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
     border: 3px solid #D8900A;
     border-radius: 50%;
 }
 
 .player2ImgGame {
-    padding-top: 10px;
-    width: 80%;
-    height: auto;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
     border: 3px solid #8B1C24;
     border-radius: 50%;
+}
+
+.youWin {
+    font-size: 60px;
+}
+
+.damage {
+    font-size : 50px !important;
+}
+
+.dmgNb {
+    color: #8B1C24 !important;
+}
+
+.black {
+    color: #000 !important;
 }

@@ -11,8 +11,9 @@ include './inc_script.php';
         <div class="row py-5 text-center">
             <div class="col-sm-12">
                 <h1>EGGS FIGHTERS</h1>
-                </br><p>vous avez gagne!</p>
-                <p>vous allez pouvoir afronter le boss final!</p>
+                <h2><?= $_SESSION['playerFinal']['name']?></h2>
+                <p class="youWin">Vous avez gagne!</p>
+                <p>Vous allez pouvoir affronter le boss final!</p>
             </div>
             <div class="col-md-12">
                 <a href="Attaque.php" class="btn btn-info mb-2" role="button">Fight!!!</a>

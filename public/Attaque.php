@@ -18,8 +18,8 @@ if(isset($_GET['a']) && $_GET['a']==='@'){
 }
 ?>
                     <!-- Joueurs -->
-<div class="container-fluid bg-dark text-white">
-<div class="container-fluid bg-dark text-white">
+
+<div class="container-fluid jumbotron py-5 bg-dark text-white">
     <div class="row  d-flex justify-content-center">
         <div class="col-md-12 text-center">
             <h1>Prèt pour la bagarre ?</h1>

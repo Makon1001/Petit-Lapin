@@ -40,9 +40,9 @@ include './connexionApi.php';
     </div>
 </section>
     <hr class="m-0">
-<footer class="text-center py-5">
+<footer class="text-center py-3">
     <div class="container ">
-        <p>Hackathon 1</p>
+        <p>Les lapins, ça groove</p>
     </div>
 
 </footer>
