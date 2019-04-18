@@ -2,11 +2,6 @@
 session_start();
 
 
-
-
-
-
-
 // Controle des forms et datas passées dans le GET
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -25,6 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['eggs']['egg'.($i+1)]= array();
             $_SESSION['eggs']['egg'.($i+1)]['alive']=true;
         }
+        // init position player
+        $_SESSION['player1']['posX'];
+        $_SESSION['player1']['posY'];
+        $_SESSION['player2']['posX'];
+        $_SESSION['player2']['posY'];
         header('location: /public/init.php');
     } else {
         header('location: /public/index.php');
