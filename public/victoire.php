@@ -2,6 +2,7 @@
 include './inc_head.php';
 include './connexionApi.php';
 include './inc_script.php';
+session_destroy ();
 ?>
 <header class="jumbotron text-center text-white bg-dark">
     <h2>Petits Lapins Prod vous à présenté</h2>
@@ -16,10 +17,9 @@ include './inc_script.php';
                     <p>le jeu est terminé!</p>
                     <img src ="https://www.assoedc.com/wp-content/uploads/2015/09/EDC-Victoire-EnR.jpg">
                     <p>merci d'avoir joué au jeu!</p></br>
-                    <div>
-                    <button class="btn btn-primary" value="submit" type="submit" id="index-btn">rejouer</button>
-                    
-                    </div>
+                </div>
+                <div class="col-md-12">
+                    <a href="index.php" class="btn btn-info mb-2" role="button">Fight!!!</a>
                 </div>
             </div>
         </div>
