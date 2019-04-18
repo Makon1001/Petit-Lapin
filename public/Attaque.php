@@ -7,13 +7,20 @@ function change(){
         echo $_SESSION['playerFinal']['name'];
     }
 }
+function ok(){
+    if($_SESSION['player3']['pv']===50){
+        echo '<div class="col-md-12 text-center"><h2>Yavouz perd 50 pv!!</h2></div>';
+    }
+}
 ?>
                     <!-- Joueurs -->
+<div class="container-fluid bg-dark text-white">
 <div class="container-fluid bg-dark text-white">
     <div class="row  d-flex justify-content-center">
         <div class="col-md-12 text-center">
             <h1>Prèt pour la bagarre ?</h1>
         </div>
+        <?php ok(); ?>
         <div class="col-md-12 text-center">
             <h2><?php change() ?> à toi de jouer !!!</h2>
         </div>
@@ -50,13 +57,7 @@ function change(){
                 <img class="py-2 mb-2 img" src=<?php echo $_SESSION['player3']['imgSrc'] ?> alt="27">
             </div>
             <div>
-                <a href="?=p" class="btn btn-info mb-2" role="button">Attaque</a>
-            </div>
-            <div>
-                <a href="#" class="btn btn-info py-2 pb-2 mb-2" role="button">Se soigner</a>
-            </div>
-            <div>
-                <a href="#" class="btn btn-info" role="button">Defense</a>
+                <a href="defaite.php" class="btn btn-info mb-2" role="button">Attaque</a>
             </div>
         </div>
     </div>
