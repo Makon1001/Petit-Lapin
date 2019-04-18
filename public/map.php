@@ -67,7 +67,7 @@ for ($i = 1; $i< $_SESSION['eggsCounter']; $i++ ) {
                         <div class="col-sm-2 border border-white bg-dark text-center p-0" id="col-<?= $j?>">
                             <?php
                             for($k=1;$k < $_SESSION['eggsCounter'];$k++){
-                                if ($_SESSION['eggs']['egg'.$k]['position'][0] == $j && $_SESSION['eggs']['egg'.$k]['position'][1] == $i) { ?>
+                                if ($_SESSION['eggs']['egg'.$k]['alive'] && $_SESSION['eggs']['egg'.$k]['position'][0] == $j && $_SESSION['eggs']['egg'.$k]['position'][1] == $i) { ?>
                                     <div class=" py-5  h-100 w-100">
                                         <img src="<?php echo $_SESSION['eggs']['egg'.$k]['imgSrc'] ?>" alt="" class="eggsImage">
                                     </div>
