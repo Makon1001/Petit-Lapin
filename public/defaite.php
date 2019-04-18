@@ -17,7 +17,7 @@ include './connexionApi.php';
                 <p>vous ferait mieux la prochaine fois! OU PAS!!!</p></br>
             </div>
             <div class="col-md-12">
-                <a href="defaite.php" class="btn btn-info mb-2" role="button">Réessayer</a>
+                <a href="Attaque.php" class="btn btn-info mb-2" role="button">Réessayer</a>
             </div>
         </div>
     </div>

@@ -2,7 +2,6 @@
 include './inc_head.php';
 include './connexionApi.php';
 include './inc_script.php';
-session_destroy ();
 ?>
 <header class="jumbotron text-center text-white bg-dark">
     <h2>Petits Lapins Prod vous à présenté</h2>
@@ -13,10 +12,10 @@ session_destroy ();
             <div class="col-sm-12">
                 <h1>EGGS FIGHTERS</h1>
                 </br><p>vous avez gagne!</p>
-                <p>vous allez pouvoir afronter le bosse final!</p>
+                <p>vous allez pouvoir afronter le boss final!</p>
             </div>
             <div class="col-md-12">
-                <a href="index.php" class="btn btn-info mb-2" role="button">Fight!!!</a>
+                <a href="Attaque.php" class="btn btn-info mb-2" role="button">Fight!!!</a>
             </div>
         </div>
     </div>

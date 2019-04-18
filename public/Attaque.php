@@ -9,10 +9,11 @@ function change(){
 }
 function ok(){
     if($_SESSION['player3']['pv']===50){
-        echo '<div class="col-md-12 text-center"><h2>Yavouz perd 50 pv!!</h2></div>';
+        echo '<div class="col-md-12 text-center"><h2>Yavuz perd 50 pv!!</h2></div>';
     }
 }
-if($_GET['a']='@'){
+
+if(isset($_GET['a']) && $_GET['a']==='@'){
     header('location: /public/victoire.php');
 }
 ?>
