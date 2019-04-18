@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['eggs']=array();
         for($i=0;$i<5;$i++){
-            $_SESSION['eggs']['egg'.$i+1]= array();
+            $_SESSION['eggs']['egg'.($i+1)]= array();
         }
         header('location: /public/init.php');
     } else {

@@ -37,4 +37,7 @@ for ($i= 1; $i <=5; $i++) {
     }
 }
 
+$_SESSION['eggsCounter'] = 5;
+
+
 header('location: /public/personnage.php');
