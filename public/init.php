@@ -4,13 +4,19 @@ include 'inc_head.php';
 include 'connexionApi.php';
 
 
-if (!isset($_SESSION['player1']['posX']) && !isset($_SESSION['player1']['posY'])) {
+if (empty($_SESSION['player1']['posX']) && empty($_SESSION['player1']['posY'])) {
     $_SESSION['player1']['posX'] = rand(0, 5);
     $_SESSION['player1']['posY'] = rand(0, 5);
 }
-if (!isset($_SESSION['player2']['posX']) && !isset($_SESSION['player2']['posY'])) {
-    $_SESSION['player2']['posX'] = rand(0, 5);
-    $_SESSION['player2']['posY'] = rand(0, 5);
+if (empty($_SESSION['player2']['posX']) && empty($_SESSION['player2']['posY'])) {
+    do {
+        $positionX = rand(0, 5);
+        $positionY = rand(0, 5);
+        if ($positionX != $_SESSION['player1']['posX'] && $positionY != $_SESSION['player1']['posY']) {
+            $_SESSION['player2']['posX'] = $positionX;
+            $_SESSION['player2']['posY'] = $positionY;
+        }
+    }while(empty($_SESSION['player2']['posX']));
 }
 
 

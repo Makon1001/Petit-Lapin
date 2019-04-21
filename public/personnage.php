@@ -56,15 +56,15 @@ choixPlayer();
 
 function bouton(){
     if (!empty($_SESSION["player2"]["champion"])){
-        echo '<a href="map.php" class="btn btn-danger" >Prêt pour le combat ??</a>';
+        echo '<a href="map.php" class="btn btn-danger btn-perso-select" >Prêt pour le combat ??</a>';
     }else{?>
-        <button type="submit" class="btn btn-primary" name="submit" value="<?php echo recupIdChampion();?>"><?php checkplayer();?></button><?php
+        <button type="submit" class="btn btn-primary btn-perso-select" name="submit" value="<?php echo recupIdChampion();?>"><?php checkplayer();?></button><?php
     }
 }
 ?>
     <header class="jumbotron text-center text-white bg-dark">
         <h2>Selectionne ton personnage</h2>
-        <p>N'est pas peur !!! l'aventure commence!!! selection une image puis appuis sur le bouton Choix player. Une fois prêt Combattez!!! </p>
+        <p>N'ai pas peur !!! l'aventure commence!!! Selectionne une image puis appuis sur le bouton Choix player. Une fois prêt... Combattez!!! </p>
     </header>
     <form method="get">
         <div class="container_fluid py-5">
@@ -78,12 +78,9 @@ function bouton(){
                 <div class="col-md-6">
                     <div class="row">
                         <?php
-                        for ($i = 1; $i <= 12; $i++) {
-                            $value[$i] = selectRandomPerso();
-                            $value[$i] = get_object_vars($value[$i]);
-                            echo '<div class="col-2"><a href="?id=' . $value[$i]["id"] . '" ><img src="' . $value[$i]["image"] . '" alt="..." class="img-thumbnail"><p>' . $value[$i]["name"] . '</p></a></div>';
-                        }
-                        ?>
+                        foreach ($_SESSION['persos'] as $perso) {?>
+                             <div class="col-2 <?php if ($_GET['id']==$perso['id']){echo "playerSelect";}?> "><a href="?id=<?=$perso["id"]?>"><img src="<?= $perso["image"]?>" alt="..." class="img-thumbnail"><p><?=$perso["name"]?></p></a></div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-3 text-center">
@@ -94,8 +91,8 @@ function bouton(){
                 </div>
             </div>
         </div>
-        <div class="container-fluid bg-dark py-5">
-            <div class="row justify-content-center">
+        <div class="container-fluid bg-dark py-5" id="selectFooter">
+            <div class="row justify-content-center ">
                 <?php bouton() ?>
             </div>
         </div>

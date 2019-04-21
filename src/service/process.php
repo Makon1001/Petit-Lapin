@@ -1,10 +1,11 @@
 <?php
+
+use GuzzleHttp\Client;
+
+require '../../vendor/autoload.php';
+
+
 session_start();
-
-
-
-
-
 
 
 // Controle des forms et datas passées dans le GET
@@ -14,17 +15,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // init des sessions
     if(isset($_POST['player1_name']) && !empty($_POST['player1_name']) && isset($_POST['player2_name']) && !empty($_POST['player2_name'])) {
-        $_SESSION['player1']['name'] = $_POST['player1_name'];
-        $_SESSION['player1']['eggCount'] = 0;
-        $_SESSION['player2']['name'] = $_POST['player2_name'];
-        $_SESSION['player2']['eggCount'] = 0;
+        for ($i = 1; $i <= 2; $i++) {
+            //init players
+            $_SESSION['player'.$i]['name'] = $_POST['player'.$i.'_name'];
+            $_SESSION['player'.$i]['eggCount'] = 0;
+            $_SESSION['player'.$i]['posX'];
+            $_SESSION['player'.$i]['posY'];
+        }
+
         // init Session egg
 
-        $_SESSION['eggs']=array();
+        $_SESSION['eggs']= [];
         for($i=0;$i<5;$i++){
             $_SESSION['eggs']['egg'.($i+1)]= array();
             $_SESSION['eggs']['egg'.($i+1)]['alive']=true;
         }
+        // init array
+
+        $_SESSION['persos'] = [];
+        for ($i = 0; $i < 12; $i++) {
+            $_SESSION['persos'][] = selectRandomPerso();
+        }
+        $_SESSION['persos'] = array_map("get_object_vars", $_SESSION['persos']);
+
         header('location: /public/init.php');
     } else {
         header('location: /public/index.php');
@@ -69,9 +82,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         header('location: /public/map.php');
     }
 
-
-
-
 }
 
+function selectRandomPerso() {
+    $client = new GuzzleHttp\Client([
+        'base_uri' => 'http://easteregg.wildcodeschool.fr/api/'
+    ]);
+    $response = $client->request('GET', 'characters/random');
+    // or
+
+    $body = $response->getBody();
+
+    return json_decode($body->getContents());
+}
 
